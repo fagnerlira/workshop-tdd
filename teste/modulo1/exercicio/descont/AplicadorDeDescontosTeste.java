@@ -40,8 +40,23 @@ public class AplicadorDeDescontosTeste {
 
 		aplicadorDeDescontos.aplica(compra);
 
+		// 0.88 e a diferenca de = 100 - 0.12 = 0.88
+		//0.12 da classe AplicadorDeDescontos metodo descontoPorProduto linha 17 
 		Assert.assertEquals((3500+1500)*0.88, compra.getValorLiquido(),
 				0.0001);
 	}
 
+	@Test
+	public void testeComCompraBuilder(){
+		
+		Compra compra = new CompraBuilder().com("NOTEBOOK",3500).com("WINDOWS PHONE", 1500).constroi();
+		
+		AplicadorDeDescontos aplicadorDeDescontos = new AplicadorDeDescontos();
+		aplicadorDeDescontos.aplica(compra);
+		
+		Assert.assertEquals((3500+1500)*0.88, compra.getValorLiquido(),
+				0.0001);
+	}
+	
+	
 }
