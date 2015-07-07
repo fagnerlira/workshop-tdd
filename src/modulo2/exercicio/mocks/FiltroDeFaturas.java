@@ -17,9 +17,15 @@ public class FiltroDeFaturas {
 		List<Fatura> filtradas = new ArrayList<Fatura>();
 		
 		for(Fatura fatura : faturas.todas()) {
-			if (fatura.getValor() > 2000) filtradas.add(fatura);
-			else if (fatura.getValor() < 2000 && fatura.getCliente().equals("MICROSOFT")) filtradas.add(fatura);
-			else if (fatura.getData().get(Calendar.YEAR) < 1999) filtradas.add(fatura);
+			//primeiro if
+			if (fatura.getValor() > 2000) 
+				filtradas.add(fatura);
+			//segundo if
+			else if (fatura.getValor() < 2000 && fatura.getCliente().equals("MICROSOFT")) 
+				filtradas.add(fatura);
+			//terceiro if
+			else if (fatura.getData().get(Calendar.YEAR) < 1999) 
+				filtradas.add(fatura);
 		}
 		
 		return filtradas;

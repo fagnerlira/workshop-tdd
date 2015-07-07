@@ -7,6 +7,8 @@ public class Fatura {
 	private Calendar data;
 	private String cliente;
 	private double valor;
+	
+	
 	public Fatura(Calendar data, String cliente, double valor) {
 		this.data = data;
 		this.cliente = cliente;
